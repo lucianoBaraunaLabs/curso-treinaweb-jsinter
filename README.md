@@ -1,2 +1,2 @@
 # Curso Treinaweb - Js Intermediário
-Respositório de estudos.
+Respositório de estudos. 
