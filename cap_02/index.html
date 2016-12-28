@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    // var Pessoa = function(nome){
+    //     this.nome = nome;
+    // }
+    // 
+    // var cleber = new Pessoa();
+    // var carlos = new Pessoa();
+    // cleber.nome = 'Cleber';
+    // 
+    // console.log(cleber);
+    
+    // Deletando propriedade
+    // var pessoa = {}
+    // pessoa.nome = 'bruno';
+    
+    // console.log(pessoa.hasOwnProperty('nome'));
+    // delete pessoa.nome;
+    // console.log(pessoa.hasOwnProperty('nome'));
+
+    // defineProperty é uma forma de definir uma propriedade e não ser deletada.
+
+    var pessoa = {}
+    Object.defineProperty(pessoa, 'nome',{
+        configurable: false, // nao pode ser excluida
+        value: 'bruno',
+        writable: false // nao pode ser alterada
+    });
+    pessoa.nome = 'fernando';
+
+    console.log(pessoa.nome);
+    delete pessoa.nome
+    console.log(pessoa.hasOwnProperty('nome'));
+    
+    </script>
+</body>
+</html>
