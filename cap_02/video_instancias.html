@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Document</title>
+</head>
+<body>
+    <script type="text/javascript">
+    /*
+    var Carro = function(nome){
+        this.nome = nome;     
+    }
+
+    var carro1 = new Carro('Gol'); // Instancias de carro
+    var carro2 = new Carro('Palio'); // Instancias de carro
+
+    console.log(carro1.nome)
+    console.log(carro2.nome)
+    */
+    
+    /* Criando instancias com o objeto construtor new Object()
+    var obj = new Object();
+    var obj2 = new Object();
+    obj.nome = 'javascript';
+
+    console.log(obj);
+    console.log(typeof obj);
+    */
+
+    var obj = {
+        nome: 'javascript'
+    };
+    
+    // Adicionando propriedades ao objeto
+    // obj.idade = 17;
+    // obj.nome = 'Luciano';
+
+    Object.defineProperty(obj,'idade',{
+        configurable: false, // não pode ser deletada
+        enumerable: false, //define se durante um for in a propriedade pode ser encontrada
+        value: 17, // valor da propriedade
+        writable: false // define se o valor pode ser alterado ou nao
+    });
+    delete obj.idade;
+    obj.idade = 18;
+
+    for(chaves in obj){
+        console.log(chaves);
+    }
+
+    console.log(obj);
+    console.log(typeof obj);
+
+    </script>
+</body>
+</html>
