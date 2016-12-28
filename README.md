@@ -1,2 +1,2 @@
-# estudo-treinaweb-jsinter
-Curso Treinaweb - Javascript intermediário
+# Curso Treinaweb - Js Intermediário
+Respositório de estudos.
