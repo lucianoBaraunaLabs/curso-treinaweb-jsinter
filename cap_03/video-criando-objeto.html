@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video criando objetos</title>
+</head>
+<body>
+    <script>
+    
+    var idade = new Number(17);
+    
+    console.log(idade);
+    
+    var Carro = function(cor, nome){
+        this.cor = cor;
+        this.nome = nome
+        
+    }
+    
+    
+    var carro = new Carro('Branco', 'Gol');
+
+    var carro2 = new carro.constructor('Preto', 'Palio');
+    
+        
+    
+    console.log(carro);    
+    console.log(carro2); // a referencia de construcor só pode ser retornada quando usamos um função como construtora
+
+    
+    
+    var livro = {
+        nome: 'Clean Cody'
+    }
+    
+    var livro2 = new livro.constructor();
+    
+    console.log(idade.constructor);
+    console.log(carro.constructor);
+    console.log(livro.constructor);
+    
+    console.log(livro2);
+    
+    
+    
+    </script>
+</body>
+</html>
