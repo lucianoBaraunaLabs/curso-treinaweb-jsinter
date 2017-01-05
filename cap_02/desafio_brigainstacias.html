@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Briga de Instancias</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    var Pessoa = function(nome, idade){
+        this.nome= nome;
+        this.idade= idade;
+    }
+    
+    var Carro = function(cor, ano){
+        this.ano = ano;
+    }
+    
+    var Passaro = function(cor, tamanho){
+        this.tamanho = tamanho;
+    }
+
+    var pessoa = new Pessoa('Andre', 17);
+    var carro = new Carro('Preto', 2010);
+    var passaro = new Passaro('Branco', 10);
+    
+    var pessoa2 = pessoa;
+    var carro2 = carro;
+    var passaro2 = passaro;
+    
+    console.log(carro);
+    console.log(passaro);
+    
+    carro.cor = 'Preto';
+    passaro.cor = 'Branco';
+    
+    delete carro.cor
+    delete passaro.cor
+    
+    Object.defineProperty(carro, 'cor',{ 
+        configurable: false, 
+        value: 'Preto'
+    });
+    Object.defineProperty(passaro, 'cor',{ 
+        configurable: false, 
+        value: 'Branco'
+    });
+    
+    console.log(passaro);
+    console.log(carro);
+    
+    console.log(pessoa2.nome)
+    console.log(passaro2.cor)
+    console.log(carro2.cor)
+    
+    
+    
+       
+
+    // var palio = new Carro('Palio', 'Azul');
+    // palio.cor = 'vermelho';
+    // 
+    // var fiat = palio;
+    // fiat.nome = 'Fiat';
+    // fiat.cor = 'Magenta';
+    // 
+    // var pombo = new Passaro('Flango', 'amarelo');
+    // pombo.cor = 'branco';
+    // 
+    // var flango = pombo;
+    // flango.nome = 'Flango';
+    // flango.cor = 'preto';
+    // 
+    // Object.defineProperty(palio, 'cor',{
+    //     configurable: false,
+    // }); 
+    // 
+    // Object.defineProperty(pombo, 'cor',{
+    //     configurable: false,
+    // }); 
+    // 
+    // delete pombo.cor
+    // delete palio.cor
+    // 
+    // console.log(palio);
+    // console.log(pombo);
+    // 
+    // console.log(fiat);
+    // console.log(flango);
+    
+   
+
+    </script>
+</body>
+</html>
