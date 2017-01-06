@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Lista telefonica</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    var agenda = {
+        nome: 'Contatos Pessoais',
+        contatos: [],
+        adicionar: function(contato){
+            if(contato.nome && contato.telefone && contato.email){
+                this.contatos.push(contato);
+            }else{
+                console.log('Erro ao add o novo contato.');
+            }
+            
+        },
+        remover: function(nome){
+            for (var indice in this.contatos) {
+                var contato = this.contatos[indice];
+                if (contato.nome === nome) {
+                    this.contatos.splice(indice,1) // retira somente o elemento que está no indice
+                    return true;
+                }
+            }
+            return false;
+        },
+        listar: function(){
+            for (var indice in this.contatos){
+                var contato = this.contatos[indice];
+                if(contato.pagina){
+                    console.log(contato.nome+' '+contato.telefone+' '+contato.email+' '+contato.pagina);
+                }else{
+                    console.log(contato.nome+' '+contato.telefone+' '+contato.email);
+                }
+            }
+        }
+        
+    }
+    
+    agenda.adicionar({
+        nome: 'Ailton',
+        telefone: '1232454',
+        email: 'ailton@gmail.com',
+        pagina: 'www.ailton'
+    });
+    
+    agenda.adicionar({
+        nome: 'Felipe',
+        telefone: '1232454',
+        email: 'felipe@gmail.com',
+    });
+    
+    console.log(agenda.remover('Felipe'));
+    agenda.remover('Felipe');
+    
+    agenda.listar();
+    
+
+    </script>
+</body>
+</html>
