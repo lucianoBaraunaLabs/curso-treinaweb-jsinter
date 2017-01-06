@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Cadeias de protótipos</title>
+</head>
+<body>
+    <script>
+    var Habilidades = function(){
+        this.falar = function(fala){
+            console.log(fala);
+        }
+    }
+
+    var Programador = function(){
+        this.programar = function(){
+            console.log('programando em '+ this.linguagem);
+          }
+    }
+
+    var Humano = function(nome){
+    }
+    
+    var ProgramadorJavaScript = function(){
+      this.linguagem = 'JavaScript';
+    }
+
+    Programador.prototype = new Habilidades();
+    ProgramadorJavaScript.prototype = new Programador();
+    Humano.prototype = new Habilidades();
+
+    
+    var programadorTreinaWeb = new ProgramadorJavaScript();
+    var pessoaNormal = new Humano();
+    
+    console.log(programadorTreinaWeb);
+    
+    
+    programadorTreinaWeb.programar();
+    programadorTreinaWeb.falar('Oii... Voce esta gostando do curso?');
+    pessoaNormal.falar('Eu gosto de jogar bola');
+    </script>
+</body>
+</html>
