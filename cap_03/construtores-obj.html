@@ -6,6 +6,20 @@
 </head>
 <body>
     <script>
+    
+    var Pessoa = function(idade){
+      this.idade = idade;
+    }
+
+    var cleber = new Pessoa(25);
+
+    console.log(cleber.idade);
+    
+    console.log(cleber instanceof Pessoa);
+    
+    
+    
+    
     Object.prototype.qualCurso = function(){
         return 'JavaScript Intermediario';
     }
