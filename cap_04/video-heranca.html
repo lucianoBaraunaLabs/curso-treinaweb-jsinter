@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Vídeo Heranca</title>
+</head>
+<body>
+    <script>
+        // var curso = {};
+        // // console.log(curso.toString());
+        // // console.log(curso.addAluno());
+
+        // console.log(Object.getPrototypeOf(curso)); // Pega todo o prototipo
+
+        // var habilidade = {
+        //     falar: function(msg){
+        //         console.log(msg);
+        //     }
+        // }
+
+        // habilidade.falar('Treinaweb');
+
+        // var pessoa = {
+        //     __proto__: habilidade, // caso ele não tenha falar nele mesmo ele vai buscar no seu prototipo
+        //     falar: function(msg){ // a primeira definicao que ele busca e a propria
+        //         alert(msg);
+        //     }
+        // }
+
+        // pessoa.falar('Pessoa')
+
+        var Habilidade = function(){
+            this.falar = function(msg){
+                console.log(msg)
+            }
+        }
+
+        Habilidade.prototype.andar = function(){
+            console.log('Andando');
+        }
+
+        var habilidade = new Habilidade();
+
+        console.log(habilidade.hasOwnProperty('andar')); // false, pq essa propriedade é criada somente no prototype
+
+        var Pessoa = function(){
+
+        }
+
+        Pessoa.prototype = new Habilidade();
+
+        var pessoa = new Pessoa();
+
+        pessoa.falar('TreinaWeb');
+        pessoa.andar();
+        console.log(habilidade.hasOwnProperty('andar'));
+
+        
+    
+    
+
+    </script>
+</body>
+</html>

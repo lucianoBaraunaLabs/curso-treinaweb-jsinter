@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Create</title>
+</head>
+<body>
+    <script>
+        var habilidades = {
+            falar: function(fala){
+                console.log(fala);
+            }
+        }
+
+        var humano = {
+            __proto__: habilidades
+        }
+
+        habilidades.falar = function(fala){ // mesmo declarando com proto json ele pode ser sobrescrito
+            alert(fala);
+        }
+
+        humano.falar('Oii...');
+
+    
+    
+
+    </script>
+</body>
+</html>

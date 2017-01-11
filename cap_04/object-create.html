@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Object Create</title>
+</head>
+<body>
+    <script>
+//    var a  = Object.create(null); // Se colocar null ele não herda as propriedades.
+//    var obj = Object.create(Object.prototype);
+
+//    console.log(obj.toString());
+//    console.log(a.toString());
+
+   var habilidades = {
+       falar: function(fala){
+           console.log(fala);
+       }
+   }
+   
+   var humano = Object.create(habilidades, {nome:{value:'Andre'}});
+
+   humano.falar('Oii... meu nome e '+humano.nome);
+
+    
+    
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Prot&oacute;tipos com JSON</title>
+</head>
+<body>
+    <script>
+    var habilidades = {
+        falar: function(fala){
+            console.log(fala);
+        }
+    }
+    
+    var humano = {
+        __proto__:habilidades
+    }
+    
+    console.log(Object.getPrototypeOf(humano));
+    
+    
+
+    </script>
+</body>
+</html>
