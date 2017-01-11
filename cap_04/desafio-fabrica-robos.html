@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Fábrica de Robôs minha propsota</title>
+</head>
+<body>
+    <script>
+        var Robo = function(){
+            var status = 'Desligado';
+            var trocarStatus = function(novoStatus){
+                if(status === 'Ligado'){
+                    status = novoStatus;
+                }
+            }
+            this.ligar = function(){
+                if(status === 'Desligado'){
+                    status = 'Ligado';
+                }else{
+                    console.log('O Robo esta ligado');
+                }
+            }
+            this.desligar = function(){
+                trocarStatus('Desligado');
+            }
+            this.getStatus = function(){
+                return status;
+            }
+            this.andar = function(){
+                trocarStatus('Andando');
+            }
+            this.correr = function(){
+                trocarStatus('Correndo');
+            }
+            this.pular = function(){
+                if(status === 'Andando'){
+                    trocarStatus('Pulando');
+                }
+            }
+        }
+
+
+        var RoboLutador = function(){
+            this.lutar = function(robo){
+                //..
+                console.log('Lutar');
+            }
+        }
+
+        var RoboDefensor = function(){
+            this.defender = function(ataque){
+                //..
+                console.log('Defender');
+            }
+        }
+        
+        RoboLutador.prototype = new Robo();
+        RoboDefensor.prototype = new Robo();
+
+        var roboLutador = new RoboLutador();
+        var roboDefensor = new RoboDefensor();
+        
+      
+        roboLutador.ligar();
+        roboDefensor.ligar();
+        console.log(roboLutador.getStatus());
+        console.log(roboDefensor.getStatus());
+
+        roboDefensor.defender();
+        roboLutador.lutar();
+    
+    
+
+    </script>
+</body>
+</html>
