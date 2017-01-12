@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>This</title>
+</head>
+<body>
+    <script>
+    // console.log(this);
+    
+    
+    // var filosofo = {
+    //     quemSouEu: function(){
+    //         console.log(this);
+    //     }
+    // }
+
+    // filosofo.quemSouEu();
+
+    // var foo = function (){ // this só referencia a instancia
+    //     console.log(this);
+    //     this.abelha = 'Zzzzz...';
+    //     var bar = function(){
+    //         console.log(this);
+    //         this.urso = 'Uuuurrr...';
+    //     }
+    //     bar();
+    // }
+
+    // foo();
+    // console.log(abelha);
+    // console.log(urso);
+
+    // Quando usamos o operador new, criamos uma nova instância de Pessoa, 
+    // assim this passa a ser referência de alfredo.
+    // var Pessoa = function(){ 
+    //     this.quemSouEu = function(){
+    //         console.log(this);
+    //     }
+    // }
+
+    // var alfredo = new Pessoa();
+
+    // alfredo.quemSouEu();
+
+
+    var falsificarIdentidade = function(callback){
+        callback();
+    }
+
+    var Pessoa = function(){
+        var that = this; // poderia ser self
+        this.quemSouEu = function(){
+            console.log(that);
+        }
+    }
+
+    var alfredo = new Pessoa();
+
+    falsificarIdentidade(alfredo.quemSouEu);
+
+
+
+
+    
+    </script>
+</body>
+</html>
