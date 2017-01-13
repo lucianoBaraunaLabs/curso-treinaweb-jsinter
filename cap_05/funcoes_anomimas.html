@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Funções Anônimas</title>
+</head>
+<body>
+    <script>
+
+    (function(){
+        //lógica da funcao aqui
+    })()
+    
+    (function(nome){
+        console.log(nome);
+    })('TreinaWeb')
+
+    (function(){
+        console.log(this.nome);
+    }).call({nome:'TreinaWeb'});
+
+    (function(){
+        console.log(this.nome);
+    }).apply({nome:'TreinaWeb'});
+
+    
+    </script>
+</body>
+</html>

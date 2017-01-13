@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Call & Apply</title>
+</head>
+<body>
+    <script>
+    // var nome = 'global';
+    // var idade = 0;
+    // var tamanho = 0;
+    // var peso = 0;
+
+    // var pessoa1 = {
+    //     nome:'bruno',
+    //     idade: 21,
+    //     tamanho: 1.75,
+    //     peso: 54
+    // }
+
+    // var pessoa2 = {
+    //     nome:'thiago',
+    //     idade: 24,
+    //     tamanho: 1.70,
+    //     peso: 70
+    // }
+
+    // var descobrirCaracteristicas = function(){
+    // console.log('nome: '+this.nome);
+    // console.log('idade: '+this.idade);
+    // console.log('tamanho: '+this.tamanho);
+    // console.log('peso: '+this.peso);
+    // }
+
+    // descobrirCaracteristicas();
+    // descobrirCaracteristicas.call(pessoa1);
+    // descobrirCaracteristicas.apply(pessoa2);
+
+
+    var empresa = {
+        nome:'TreinaWeb'
+    }
+
+    var descreverEmpresa = function(cursos, qualidade){
+        console.log(this.nome);
+        for (var i=0; i<cursos.length; i++){
+            console.log(cursos[i]);
+        }
+        console.log(qualidade);
+    }
+
+    descreverEmpresa.call(empresa,['JavaScript','C#','Java','PHP','Entre Outros'],'100% confiavel');
+    descreverEmpresa.apply(empresa,[['JavaScript','C#','Java','PHP','Entre Outros'],'100% confiavel']);
+
+    
+    </script>
+</body>
+</html>
