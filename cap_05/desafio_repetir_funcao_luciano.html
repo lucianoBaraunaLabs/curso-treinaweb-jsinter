@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabalhando com funções</title>
+</head>
+<body>
+    <script>
+
+    var repetir = function(quant, executar){
+        for(var i = 0; i < quant; i++){
+            executar();
+        }
+    }
+
+     var toFalando = function(){
+        console.log('Eiii eu to aqui!!!!')
+    };
+
+    repetir(5, toFalando);
+
+    </script>
+</body>
+</html>

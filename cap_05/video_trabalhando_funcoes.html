@@ -7,9 +7,106 @@
 <body>
     <script>
 
-    var gerarRelatorio = function(){
+    // var gerarRelatorio = function(saida){
+    //     // logica buscar dados
+    //     var dados = 'Treinaweb Javascript';
+    //     saida(dados);
+    // }  
 
-    }  
+    // var imprimirNoTerminal = function(dados){
+    //     console.log(dados);
+    // }
+
+    // var imprimirNaTela = function(dados){
+    //     document.write(dados);
+    // }
+
+    // gerarRelatorio(imprimirNoTerminal);
+
+    // gerarRelatorio(imprimirNaTela);
+
+    // gerarRelatorio(function(dados){
+    //     // Mostrando que tambem e possivel passar a funcao dessa forma
+    //     // por conta do callback
+    //     alert(dados)
+    // })
+
+    // var cor = 'Vermelho';
+
+    // console.log(cor);
+    // console.log(window.cor);
+    // console.log(this.cor);
+
+    // var gerarRelatorio = function(saida){
+    //     var cor = "vermelha";
+    //     saida('Treinaweb');
+    // } 
+
+    // var imprimirNoTerminal = function(dados){
+    //     console.log(dados);
+    //     console.log(cor);
+    // }
+
+    // gerarRelatorio(imprimirNoTerminal);
+
+
+    // var gerarRelatorio = function(saida){
+    //     var cor = "vermelha";
+    //     var saida = function(dados){
+    //         var cor = 'Branco';
+    //         console.log(dados);
+    //         console.log(cor);
+    //     }
+    //      console.log('Cor dentro do metodo gerarRelatorio: '+' '+cor)
+
+
+    //     saida('Treinaweb');
+    // }  
+
+    // gerarRelatorio();
+
+
+// console.log(this);
+
+
+    // var Carro = function(){
+    //     console.log(this);
+    //     this.cor = 'Branco';
+    // }
+
+    // var falar = function(){
+    //     console.log(this);
+    // }
+
+    // var carro = new Carro();
+    // falar();
+    
+    // var computador = {
+    //     ligar: function(){
+    //         console.log(this)
+    //     }
+    // }
+
+    // computador.ligar();
+
+
+    var falar = function(){
+        console.log(this);
+    }
+
+    falar();
+
+    var pessoa = {
+        nome: 'Luciano'
+    };
+
+    falar.call(pessoa);
+    falar.apply(pessoa);
+
+
+    
+
+
 
     
     </script>

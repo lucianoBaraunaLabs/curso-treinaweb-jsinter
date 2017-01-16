@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Trabalhando com funções</title>
+</head>
+<body>
+    <script>
+
+        var repetirFuncao = function(repeticao, tempo, funcao){
+            // console.log(arguments[0])
+            setTimeout(function(){
+                funcao(repeticao); // sem esse argumento a funcao fica sem ter acesso ao argumento que define
+                                  // contagem.
+                if(repeticao > 1){
+                    repetirFuncao(--repeticao, tempo, funcao) // Recursividade estou chamando a mesma funcao
+                                                              // sendo que decrementando a quant
+                }
+
+            }, tempo);
+        };
+
+        repetirFuncao(10, 1000, function(repeticao){
+            console.log(repeticao+' Opa');
+        });
+
+        var imprimir = function(repeticao){
+            console.log('imprimindo em ' + repeticao)
+        }
+
+
+        repetirFuncao(10, 1000, imprimir);
+
+
+
+        (function(cursos){
+            for(var i = 0; i < cursos.length; i++){
+                console.log(cursos[i]);
+            }
+        }(['casa', 'vida']))
+
+
+
+
+
+
+
+
+
+    </script>
+</body>
+</html>

@@ -17,19 +17,20 @@
 
     // filosofo.quemSouEu();
 
-    // var foo = function (){ // this só referencia a instancia
-    //     console.log(this);
-    //     this.abelha = 'Zzzzz...';
-    //     var bar = function(){
-    //         console.log(this);
-    //         this.urso = 'Uuuurrr...';
-    //     }
-    //     bar();
-    // }
-
-    // foo();
-    // console.log(abelha);
-    // console.log(urso);
+    var foo = function (){ // this só referencia a instancia
+        
+        console.log(this);
+        this.abelha = 'Zzzzz...';
+        var bar = function(){
+            console.log(this);
+            this.urso = 'Uuuurrr...';
+        }
+        bar();
+    }
+    foo();
+    
+    console.log(abelha);
+    console.log(urso);
 
     // Quando usamos o operador new, criamos uma nova instância de Pessoa, 
     // assim this passa a ser referência de alfredo.
@@ -44,20 +45,20 @@
     // alfredo.quemSouEu();
 
 
-    var falsificarIdentidade = function(callback){
-        callback();
-    }
+    // var falsificarIdentidade = function(callback){
+    //     callback();
+    // }
 
-    var Pessoa = function(){
-        var that = this; // poderia ser self
-        this.quemSouEu = function(){
-            console.log(that);
-        }
-    }
+    // var Pessoa = function(){
+    //     var that = this; // poderia ser self
+    //     this.quemSouEu = function(){
+    //         console.log(that);
+    //     }
+    // }
 
-    var alfredo = new Pessoa();
+    // var alfredo = new Pessoa();
 
-    falsificarIdentidade(alfredo.quemSouEu);
+    // falsificarIdentidade(alfredo.quemSouEu);
 
 
 
