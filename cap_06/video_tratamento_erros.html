@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Video tratamento de erros</title>
+</head>
+<body>
+    <script>
+        var tanque = 999;
+        var abastecer = function(){
+         if(tanque < 1000){
+             tanque ++;
+         }else {
+            //  throw new Error('Tanque já está cheio'); //throw = Lancar
+             throw {message: "Taque já está cheio"} //Pode ser criado obj literal mais perde algumas propriedades do construtor.
+         }
+        }
+        try{ //try = Pegar
+            abastecer();
+            abastecer();
+
+        }catch(e){
+            console.log(e.message)
+            console.log(e.stack)
+        }
+
+
+        console.log('Treinaweb');
+    
+     
+
+
+    
+    </script>   
+</body>
+</html>
