@@ -41,16 +41,30 @@
         nome:'TreinaWeb'
     }
 
-    var descreverEmpresa = function(cursos, qualidade){
+    var descreverEmpresa = function(cursos, qualidade, executar){
         console.log(this.nome);
         for (var i=0; i<cursos.length; i++){
             console.log(cursos[i]);
         }
         console.log(qualidade);
+        executar();
     }
 
-    descreverEmpresa.call(empresa,['JavaScript','C#','Java','PHP','Entre Outros'],'100% confiavel');
-    descreverEmpresa.apply(empresa,[['JavaScript','C#','Java','PHP','Entre Outros'],'100% confiavel']);
+     var teste = function(){
+         var that = this;
+        console.log('dentro do call')
+        console.log(that);
+    }
+
+    descreverEmpresa.call(empresa,['JavaScript','C#','Java','PHP','Entre Outros'],'100% confiavel', function(){
+        console.log(this);
+        var that = this;
+        console.log(that);
+    });
+    // descreverEmpresa.apply(empresa,[['JavaScript','C#','Java','PHP','Entre Outros'],'100% confiavel']);
+
+   
+
 
     
     </script>

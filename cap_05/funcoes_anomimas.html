@@ -9,19 +9,37 @@
 
     (function(){
         //lógica da funcao aqui
-    })()
-    
+        console.log('casa');
+    })();
+
+
+
     (function(nome){
         console.log(nome);
-    })('TreinaWeb')
+    })('Luciano');
 
     (function(){
         console.log(this.nome);
-    }).call({nome:'TreinaWeb'});
+    }).call({nome:'FUNCAO CALL'});
 
     (function(){
         console.log(this.nome);
-    }).apply({nome:'TreinaWeb'});
+    }).apply({nome:'FUNCAO APPLY'});  
+
+    var animals = [
+        { species: 'Lion', name: 'King' },
+        { species: 'Whale', name: 'Fail' }
+    ];
+
+    for (var i = 0; i < animals.length; i++) {
+    (function(i) {
+        this.print = function() {
+        console.log('#' + i + ' ' + this.species
+                    + ': ' + this.name);
+        }
+        this.print();
+    }).call(animals[i], 'Casa');
+    }
 
     
     </script>
