@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Erros</title>
+</head>
+<body>
+    <script>
+
+   try{
+      var metodo1 = function(){
+        var metodo2 = function(){
+            throw new Error('Erro na execucao do metodo2');
+        }
+            metodo2();
+     }
+     metodo1();
+}catch(e){
+console.log(e.message);
+}
+
+    
+    </script>
+</body>
+</html>

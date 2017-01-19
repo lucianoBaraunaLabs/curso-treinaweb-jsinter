@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Try catch</title>
+</head>
+<body>
+    <script>
+    // try{
+    //     var metodo1 = function(){
+    //         var metodo2 = function(){
+    //         throw new Error('Erro no codigo');
+    //         }
+    //         metodo2();
+    //     }
+    //     metodo1();
+    // }catch(e){
+    //     console.log(e.stack);
+    // }
+    // Tratando erro
+    try{
+        var metodo1 = function(){
+            var metodo2 = function(){
+            throw new Error('Erro no codigo');
+            }
+            metodo2();
+        }
+        metodo1();
+    }catch(e){
+        if(e instanceof SyntaxError){
+            console.log('SyntaxError: ' + e.message);
+        }
+        else if(e instanceof Error){
+            console.log('Error: ' + e.message);
+        }
+    }
+
+
+    
+    </script>   
+</body>
+</html>
