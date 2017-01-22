@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Caixa eletrônico proposta video</title>
+</head>
+<body>
+    <script>
+        var contas = [
+            {
+                nome: 'Felipe',
+                numero: 1234,
+                valor: 10000.00,
+            },
+            {
+                nome: 'Gustavo',
+                numero: 8763,
+                valor: 8000.00,
+            },
+            {
+                nome: 'Sara',
+                numero: 34567,
+                valor: 100000.00,
+            }
+        ];
+
+        var sacar = function(numero, valor){
+            for(indice in contas) {
+                var conta = contas[indice];
+                if(conta.numero === numero){
+                    if(conta.valor >= valor){
+                        conta.valor -= valor;
+                        return valor;
+                    }else{
+                        throw new Error('O Valor de ' + valor + ' não pode ser retirado');
+                    }
+                    
+                }
+                throw new Error('A conta não existe: ' + numero);
+            }
+        };
+
+        try{
+            sacar(1,123);
+        } catch(e){
+            alert(e.message);
+            console.log(e.stack);
+        }
+
+
+        
+
+      
+    </script>
+</body>
+</html>
