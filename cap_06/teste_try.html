@@ -1,0 +1,37 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Teste try catch</title>
+</head>
+<body>
+    <script>
+
+        var alerta = function(num1, num2){
+             throw new Error('Erro na função');
+            return num1 + num2;
+           
+            // if(typeof num === "number"){ 
+            //     alert(num); 
+            // } else {
+                
+            // }
+        }
+
+         var casa = alerta(20);
+        
+
+        try{
+           
+            console.log(casa);
+        } catch(e){
+            console.log(e.message);
+        }
+
+
+        
+
+      
+    </script>
+</body>
+</html>
