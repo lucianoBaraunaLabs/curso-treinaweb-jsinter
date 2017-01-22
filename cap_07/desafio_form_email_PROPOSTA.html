@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Validando form</title>
+</head>
+<body>
+    <form action="" method="" id="formLogin">
+        
+        <label for="campoEmail">Email</label>
+        <input type="text" id="campoEmail">
+
+        <input type="submit" value="Enviar">
+    </form>
+
+     <script>
+
+        var cadastros = [],
+            formLogin = document.querySelector("#formLogin");
+
+        formLogin.addEventListener("submit", function(event){
+            event.preventDefault();
+
+            var regexEmail = /^(\w+[._-]?)+@\w+.(\w+[.]?)+$/;
+
+            var email = document.querySelector("#campoEmail").value;
+
+            try{
+                if(regexEmail.test(email)){
+                    console.log('opa');
+                    cadastros.push({
+                        userEmail: email,
+                        userTel: telefone
+                    });
+                } else {
+                    throw new Error('Email inválido')
+                }
+            }catch(e){
+                alert(e.message);
+
+            }
+
+            console.log(formLogin);
+            console.log(cadastros);
+        });
+
+        
+       
+    </script>
+
+</body>
+</html>
