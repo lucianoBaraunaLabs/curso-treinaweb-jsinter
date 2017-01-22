@@ -7,30 +7,78 @@
 <body>
     <script>
         var contas = [{
-            id: 1,
-            saldo: 500,
+            idConta: 1,
+            saldo: 2500,
             limiteSaque: 200
         },{
-            id: 2,
+            idConta: 2,
             saldo: 1000,
             limiteSaque: 500
         }];
 
-        var sacar = function(numConta, qtdSaque){
-            console.log(this[0].id);
-            console.log(idConta);
-            console.log(qtdSaque);
+       var caixaEletronico = function(conta, qtdSaque){
+            
+            var sacar = function(qtdSaque, saldoConta) {
+                console.log('Seu saldo de conta é: ' + saldoConta)
+                if(saldoConta < qtdSaque){
+                    console.log('O valor de retirada excede valor que possui.')
+                }else{
+                    console.log('Valor sacado de: ' + qtdSaque)
+                    console.log('Seu saldo agora é: ' + (saldoConta - qtdSaque));
+                }
+               
+            };
 
-        }
+            for(var prop in this){
+                try {
+                  if(this[prop].idConta === conta){
+                    console.log('Checando conta');
+                    console.log(this[prop].idConta);
+                    sacar(qtdSaque, this[prop].saldo);
+                    break;                    
+                  }else{
+                     throw new Error('Conta não existe. Por favor digite a conta certa.');  
+                                       
+                  }
+                } catch (e) {
+                  console.log(e.message);
+                }
+            }
 
-        sacar.call(contas, 1, 500);
+        // MANEIRA ANTIGA
+        //  var listaContas = this;
+           
+        //     var checkConta = function(obj, conta){
+        //         try {
+        //             if(obj === conta){
+        //                 sacar(obj.saldo)
+        //                  return obj;
+        //             } else {
+        //                throw new Error('Conta diferente. Por favor digite a conta certa.');
+                       
+        //             }
+        //         } catch (e) {
+        //             console.log(e.message);
+        //         }
+        //     };
 
+        //      var sacar = function(qtdSaque, saldoConta) {
+        //         if(saldoConta < qtdSaque){
+        //             console.log('Eiiiita')
+        //         }else{
+        //             console.log('Seu saldo agora é: ' + (saldoConta - qtdSaque));
+        //         }
+               
+        //     };
 
-    
-     
+        //      for(var prop in listaContas){
+        //         var conta = checkConta(listaContas[prop].idConta, conta)
 
+        //         console.log(conta);
 
-    
-    </script>   
+        //     };
+        };
+        caixaEletronico.call(contas, 1, 500);
+    </script>
 </body>
 </html>
