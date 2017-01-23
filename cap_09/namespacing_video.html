@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Namespacing</title>
+</head>
+<body>
+    <script type="text/javascript">
+        var nome = "Luciano";
+
+        console.log(window.nome);
+
+        (function(){
+            var nome = "Adriana";
+            console.log(nome);
+        })();
+
+        (function(){
+            var nome = "Rosane";
+            console.log(nome);
+        })();
+
+        var curso = {
+            nome: 'javascript'
+        }
+
+        var pessoa = {
+            nome: 'Luciano'
+        }
+
+        console.log(curso.nome);
+        console.log(pessoa.nome);
+
+        var minhaAplicacao = {
+            foo: function(){
+                alert('foo');
+            }
+        };
+
+        console.log(minhaAplicacao.foo = minhaAplicacao['foo'] || {});
+
+minhaAplicacao.foo();
+
+
+
+
+
+    </script>
+</body>
+</html>
