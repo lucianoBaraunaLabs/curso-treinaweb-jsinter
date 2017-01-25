@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Namespacing</title>
+</head>
+<body>
+    <script type="text/javascript">
+
+    var minhaAplicacao = minhaAplicacao || {};
+
+    (function(){
+        this.nome = 'TreinaWeb';
+    }).call(minhaAplicacao);
+
+    console.log(minhaAplicacao.nome);
+
+
+    //  var minhaAplicacao = minhaAplicacao || {};
+    //  var minhaAplicacao = (function(){
+    //     var valorPrivado = 'privado';
+    //     var funcaoPrivada = function(){
+    //         console.log('Oi...');
+    //     }
+
+    //     return {
+    //         funcaoPublica: funcaoPrivada,
+    //         getValor: function(){
+    //             return valorPrivado;
+    //         }
+    //     }
+    // })();
+
+    // minhaAplicacao.funcaoPublica();
+    // console.log(minhaAplicacao.getValor());
+
+
+
+
+
+    </script>
+</body>
+</html>
