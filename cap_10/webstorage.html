@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Storage</title>
+</head>
+<body>
+    <script type="text/javascript">
+        localStorage.nome = 'TreinaWeb';
+        console.log(localStorage.nome);
+        
+        sessionStorage.idade = 18;
+        console.log(typeof sessionStorage.idade);
+
+        sessionStorage.idade = {};
+        console.log(sessionStorage.idade);
+
+        sessionStorage.idade = ['jose','antonio']
+        console.log(sessionStorage.idade);
+
+        sessionStorage.idade = ['jose',{}]
+        console.log(sessionStorage.idade);
+
+    </script>
+</body>
+</html>

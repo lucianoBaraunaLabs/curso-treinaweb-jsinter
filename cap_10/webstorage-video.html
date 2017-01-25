@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Storage - Vídeo</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // localStorage.nome = 'Carlos';
+        // console.log(localStorage.nome);
+
+        // //Para conseguir armazenar objetos você precisa
+        // // utilizar o metodo JSON.stringfy(foo)
+
+        // var curso = {
+        //     nome: 'javascript'
+        // }
+        // localStorage.curso = curso;
+        // console.log(localStorage.curso);
+
+        // localStorage.curso = JSON.stringify(curso);
+        // console.log(localStorage.curso); // string
+        
+        // // e para recuperar o objeto vc precisa utilizar
+        // // o metodo parse
+
+        // var cursoR = JSON.parse(localStorage.curso);
+        // console.log(cursoR.nome);
+
+        // Setando chave e valor
+        localStorage.setItem('nome', 'luciano');
+        
+        // Recuperando chave e valor
+        console.log(localStorage.getItem('nome'));
+        
+        // Removendo item
+        localStorage.setItem('idade', '18');
+        // localStorage.removeItem('idade');
+        // console.log(localStorage.getItem('idade'));
+        
+        // Indice
+        for(var i = 0; i < localStorage.length; i++){
+            var nome = localStorage.key(i);
+            var valor = localStorage.getItem(nome);
+            console.log(nome + " = " + valor);
+        }
+
+        // Limpa tudo
+        // localStorage.clear();
+
+    </script>
+</body>
+</html>

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Web Storage - Métodos</title>
+</head>
+<body>
+    <script type="text/javascript">
+        // Add itens
+        sessionStorage.setItem('nome','TreinaWeb');
+        localStorage.setItem('nome','TreinaWeb');
+
+        //Recupera itens
+        var nome = localStorage.getItem('nome');
+        console.log(nome);
+
+        //Remove itens
+        localStorage.removeItem('nome');
+        var nome = localStorage.getItem('nome');
+        console.log(nome);
+
+        localStorage.setItem('nome','TreinaWeb');
+        localStorage.setItem('curso','JavaScript');
+
+        // Enumera as chaves
+
+        for(var i = 0; i < localStorage.length; i++){
+            var nome = localStorage.key(i);
+            var valor = localStorage.getItem(nome);
+            console.log(nome + " = " + valor);
+        }
+
+        // Limpar tudo
+
+        localStorage.setItem('nome','TreinaWeb');
+        localStorage.setItem('curso','JavaScript');
+
+        sessionStorage.setItem('nome','TreinaWeb');
+        sessionStorage.setItem('curso','JavaScript');
+
+        console.log(localStorage.getItem('nome'));
+        console.log(localStorage.getItem('curso'));
+
+        console.log(sessionStorage.getItem('nome'));
+        console.log(sessionStorage.getItem('curso'));
+
+        localStorage.clear();
+        sessionStorage.clear();
+
+
+        console.log(localStorage.getItem('nome'));
+        console.log(localStorage.getItem('curso'));
+
+        console.log(sessionStorage.getItem('nome'));
+        console.log(sessionStorage.getItem('curso'));
+
+    </script>
+</body>
+</html>
