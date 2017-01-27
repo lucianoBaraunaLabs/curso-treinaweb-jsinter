@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio Salvando WebStorage</title>
+</head>
+<body>
+    <script type="text/javascript">
+    
+    var agenda = {
+        nome: 'Contatos Pessoais',
+        contatos: [],
+        adicionar: function(contato){
+            var emailValido = /(\w+[._-]?)+@\w+(\w+[.]?)+$/; //ailton@email.com
+            var telefoneValido = /^\d{5}-\d{4}$/; //98765-8765
+            if(contato.nome && telefoneValido.test(contato.telefone) && emailValido.test(contato.email)){
+                this.contatos.push(contato);
+            }else{
+                throw new Error('Erro ao add o novo contato.');
+            }
+            
+        },
+        remover: function(nome){
+            for (var indice in this.contatos) {
+                var contato = this.contatos[indice];
+                if (contato.nome === nome) {
+                    this.contatos.splice(indice,1) // retira somente o elemento que est� no indice
+                    return true;
+                }
+            }
+            throw new Error('Erro ao remover usuário');
+        },
+        listar: function(){
+            this.pegarContatosSalvos();
+            for (var indice in this.contatos){
+                var contato = this.contatos[indice];
+                if(contato.pagina){
+                    console.log(contato.nome+' '+contato.telefone+' '+contato.email+' '+contato.pagina);
+                }else{
+                    console.log(contato.nome+' '+contato.telefone+' '+contato.email);
+                }
+            }
+            console.log(contato)
+        },
+        salvar: function(){
+            var contatosString = JSON.stringify(this.contatos); // transforma objetos em string no formato JSON para salvar
+            localStorage.contatos = contatosString;
+        },
+        pegarContatosSalvos : function(){
+            this.contatos = JSON.parse(localStorage.contatos); // transforma objeto em formato string para objs
+        }
+        
+    }
+    
+    // try{
+    //     agenda.adicionar({
+    //         nome: 'Ailton',
+    //         telefone: '12345-1234',
+    //         email: 'ailton@gmail.com',
+    //         pagina: 'www.ailton'
+    //     });
+        
+    //     agenda.adicionar({
+    //         nome: 'Felipe',
+    //         telefone: '12345-1234',
+    //         email: 'felipe@gmail.com',
+    //     });
+
+    //     agenda.adicionar({
+    //         nome: 'Joao',
+    //         telefone: '98765-8765',
+    //         email: '145456',
+    //     });
+    //  }catch(e){
+    //     alert(e.message);
+    // }
+
+    // agenda.remover('Felipe');    
+    agenda.listar();
+    agenda.salvar();
+    
+
+    </script>
+</body>
+</html>
