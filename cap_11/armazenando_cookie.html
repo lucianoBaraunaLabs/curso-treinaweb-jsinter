@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Armazendo cookie</title>
+</head>
+<body>
+    <script type="text/javascript">
+       console.log(navigator.cookieEnabled); // Checa se cookie está habilitado
+
+       // Para salvar a data de duração do cookie vc precisa do parâmetro expires
+       // e caso queira excluir o cookie vc precisa passar uma data anterior a atual
+       document.cookie="nome=TreinaWeb; expires=Thu, 31 Dec 2017 12:00:00 UTC";
+       console.log(document.cookie);
+
+
+    </script>
+</body>
+</html>
