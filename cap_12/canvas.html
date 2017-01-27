@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas</title>
+</head>
+<body>
+    <canvas id="desenho" width="150" height="150" style="border: 1px solid #000000"></canvas>
+    <script type="text/javascript">
+    // Metodo para desenho do canvas
+    var c = document.getElementById('desenho');
+    var ctx = c.getContext('2d');
+
+    ctx.fillStyle = '#34495e'; // cor
+
+    //linha vertical esquerda b
+    ctx.fillRect(30,20,10,70); // coordenadas do desenho 2 primeiros argumentos são
+                              // o canto esquerdo onde vai comecar e os outros são altura e largura
+
+
+    //linha horizontal baixo b
+    ctx.fillRect(30,90,60,10);
+
+    //linha vertical direita b
+    ctx.fillRect(90,50,10,50);
+
+    //linha horizontal cima b
+    ctx.fillRect(30,50,60,10);
+
+    //linha horizontal meio b
+    ctx.fillRect(30,70,30,10);
+
+    ctx.fillStyle = '#2980b9';
+
+    //linha horizontal superior
+    ctx.fillRect(30,20,90,10);
+
+    //linha vertical direita
+    ctx.fillRect(120,20,10,100);
+
+    //linha horizontal inferior
+    ctx.fillRect(20,120,110,10);
+    
+
+
+    </script>
+</body>
+</html>
