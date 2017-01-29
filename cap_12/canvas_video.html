@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas vídeo</title>
+</head>
+<body>
+    <canvas id="desenho" width="500" height="500" style="border: 1px solid #000000"></canvas>
+    <script type="text/javascript">
+    // Metodo para desenho do canvas
+    var canvas = document.getElementById('desenho');
+    var context = canvas.getContext('2d');
+
+    // // Para desenhar dois retangulos com o código abaixo vc precisa
+    // // iniciar com beginPath
+    // context.beginPath(); //e um traco que se inicia
+    // context.fillStyle = '#34af56'; // strokeStyke
+    // context.rect(100,100,40,50); // desenho PosY,PosX, w, h
+    // context.fill(); // stroke
+
+    // context.beginPath(); //e um traco que se inicia
+    // context.fillStyle = '#000000'; // strokeStyke
+    // context.rect(200,200,40,50); // desenho PosY,PosX, w, h
+    // context.fill(); // stroke
+    
+    // Da forma como vai ser escrito agora o metodo fillReact ja e
+    // iniciado com o beginPath, sendo assim nao precisando declara-lo
+    // MAIS E SEMPRE BOM DECLARAR beginPath.
+    // context.fillStyle = '#34af56';
+    // context.fillRect(200,200,40,50);
+    
+    // context.fillStyle = '#000000';
+    // context.fillRect(100,100,40,50);
+
+    // context.beginPath();
+    // context.fillStyle = '#000000';
+    // context.arc(100,100,50,0,2 * Math.PI);
+    // context.fill();
+
+    // context.beginPath();
+    // context.font = '30px Arial';
+    // context.strokeStyle = 'blue'; //fillText
+    // context.strokeText('Luciano', 200, 200);//fillText
+
+    context.beginPath();
+    context.moveTo(100,50);
+    context.lineTo(30,40);
+    context.stroke();
+
+
+
+
+
+    
+
+
+    </script>
+</body>
+</html>
