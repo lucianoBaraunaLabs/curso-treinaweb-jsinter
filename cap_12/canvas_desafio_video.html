@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Canvas Desafio vídeo</title>
+</head>
+<body>
+    <canvas id="desenho" width="250" height="250" style="border: 1px solid #000000"></canvas>
+    <script type="text/javascript">
+    // Metodo para desenho do canvas
+    var canvas = document.getElementById('desenho');
+    var context = canvas.getContext('2d');
+
+    context.beginPath();
+    context.fillStyle = '#f39c12';
+    context.moveTo(125,10);
+    context.lineTo(10,10);
+    context.lineTo(14,200);
+    context.lineTo(125,245);
+    context.lineTo(236,200);
+    context.lineTo(240,10);
+    context.fill();
+
+    context.beginPath();
+    context.fillStyle = '#f1c40f';
+    context.moveTo(125,240);
+    context.lineTo(231,195);
+    context.lineTo(235,15);
+    context.lineTo(125,15);
+    context.fill();
+   
+    context.beginPath();
+    context.fillStyle = '#ffffff';
+    context.font = '140px Arial';
+    context.fillText('J',40,155);
+    context.fillText('S',135,150);
+
+
+    </script>
+</body>
+</html>
