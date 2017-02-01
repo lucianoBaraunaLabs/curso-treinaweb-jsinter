@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Desafio nome frase video</title>
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script type="text/javascript">
+        $(document).ready(function(){
+            var $nome = $('#txtNome');
+            var nome = $nome.val();
+            var frase = nome.concat(' esta aprendendo jquery');
+            $('#frase').text(frase);
+            console.log($('#frase'));
+        });
+    </script>
+</head>
+<body>
+    <input id="txtNome" type="text" value="Luciano">
+    <p id="frase"></p>
+</body>
+</html>
