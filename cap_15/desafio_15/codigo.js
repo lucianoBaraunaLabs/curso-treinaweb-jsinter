@@ -23,25 +23,29 @@ $(document).ready(function(){
 			throw new Error('Erro ao remover usuario');
 		},
 		listar: function(){
-			// this.pegarContatosSalvos();
+			this.pegarContatosSalvos();
 			for(indice in this.contatos){
+				console.log(this.contatos[indice]);
 				var contato = this.contatos[indice];
-				
-
+				criarNovoContato(contato);
 			}
-			criarNovoContato(contato);
 		},
 		salvar: function(){
 			var contatosString = JSON.stringify(this.contatos);
+			console.log('SALVANDO ------');
+			console.log(contatosString);
+			console.log('SALVANDO ------');
 			localStorage.contatos = contatosString;
 		},
 		pegarContatosSalvos: function(){
 			this.contatos = JSON.parse(localStorage.contatos);
+			console.log('PEGANDO ------');
+			console.log(this.contatos);
+			console.log('PEGANDO ------');
 		}
 	};
 
 	var criarNovoContato = function(contato){
-		console.log('criando');
 		var cores = [
 			'caixa-verde',
 			'caixa-laranja',
@@ -65,18 +69,29 @@ $(document).ready(function(){
 
 		$contatos.append($caixa);
 	}
-	
 
-	$('#frmCadastro').on('submit', function(event){
-		console.log('opa');	
-		event.preventDefault();
-		agenda.listar();
-		agenda.salvar();
-	})
+	agenda.adicionar({
+        nome: 'Ailton',
+        telefone: '93452-2345',
+        email: 'ailton@gmail.com',
+        pagina: 'www.airton.com.br'
+    });
 
+	agenda.adicionar({
+        nome: 'Luciano',
+        telefone: '93452-2345',
+        email: 'luciano@gmail.com',
+        pagina: 'www.luciano.com.br'
+    });
 
+	agenda.adicionar({
+        nome: 'Carlos',
+        telefone: '93452-2345',
+        email: 'carlos@gmail.com',
+        pagina: 'www.carlos.com.br'
+    });
 
-	
-
+	agenda.salvar();
+	agenda.listar();
 
 });
