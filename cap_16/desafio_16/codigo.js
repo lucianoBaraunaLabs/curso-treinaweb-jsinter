@@ -92,28 +92,6 @@ $(document).ready(function(){
 		$contatos.append($caixa);
 	}
 
-	// agenda.adicionar({
-    //     nome: 'Ailton',
-    //     telefone: '93452-2345',
-    //     email: 'ailton@gmail.com',
-    //     pagina: 'www.airton.com.br'
-    // });
-
-	// agenda.adicionar({
-    //     nome: 'Luciano',
-    //     telefone: '93452-2345',
-    //     email: 'luciano@gmail.com',
-    //     pagina: 'www.luciano.com.br'
-    // });
-
-	// agenda.adicionar({
-    //     nome: 'Carlos',
-    //     telefone: '93452-2345',
-    //     email: 'carlos@gmail.com',
-    //     pagina: 'www.carlos.com.br'
-    // });
-
-	// agenda.salvar();
 	agenda.listar();
 
 });
