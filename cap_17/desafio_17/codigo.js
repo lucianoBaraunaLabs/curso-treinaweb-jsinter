@@ -48,7 +48,7 @@ $(document).ready(function(){
 					throw new Error('O telefone ' + contato.telefone + ' ja esta cadastrado');
 				}
 			}
-			if(indiceAtualizar){ // caso não seja undefined faca a logica
+			if(indiceAtualizar){ // caso nao seja undefined faca a logica
 				this.contatos[indiceAtualizar].nome = contatoAtualizado.nome;
 				this.contatos[indiceAtualizar].email = contatoAtualizado.email;
 				this.contatos[indiceAtualizar].telefone = contatoAtualizado.telefone;
@@ -90,8 +90,8 @@ $(document).ready(function(){
 			}
 		} else {
 			var telefoneAntigo = $('#txtTelefoneAntigo').val();
-			agenda.atualizar(telefoneAntigo, contato);
-			atualizarContato(telefoneAntigo, contato);
+			agenda.atualizar(telefoneAntigo, contato); // atualiza banco
+			atualizarContato(telefoneAntigo, contato); // atualiza view
 			$('#btnSubmit').val('Cadastar');
 		}
 		
