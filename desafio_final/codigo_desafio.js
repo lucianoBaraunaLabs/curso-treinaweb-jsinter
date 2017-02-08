@@ -16,7 +16,8 @@ $(function(){
         this.gameWidth = this.$canvas.width();
         this.gameHeight = this.$canvas.height();
         this.cellWidth = 15;
-        this.scoreTextStyle = '15px Verdana',
+        this.scoreTextStyle = '15px Verdana';
+        this.snakeLength = 5;
         this.color = {
             background: '#ffffff',
             boardBorder: '#2c3e50',
@@ -90,9 +91,30 @@ $(function(){
                                        // para nao termos um nested muito grande de nomes
                                        // e para termos o acesso ao obj
     
-    (function initController(){
+    (function initController(config){ // Controla o jogo com as regras
+        var food,
+            snake,
+            score;
+        
+        var createSnake = function(){
+            var snakeLength = config.snakeLength;
+            
+            snake = [];
+            for(var i = snakeLength - 1; i >= 0; i--){
+                snake.push({
+                    x: i,
+                    y: 0
+                });
+            }
+        }
 
-    }).call(SNAKE.controller);
+        var createFood = function(){
+            var cellWidth = config.cellWidth,
+                gameHeight = config.gameWidth,
+                gameHeight = config.gameHeight
+                randomX = Math.round(Math.;
+        }
+    }).call(SNAKE.controller, SNAKE.config);
     
     
 
